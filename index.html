@@ -1,19 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rusted Metal Game</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
-    <div id="gameContainer">
-        <div id="scoreDisplay">700</div>
-        <div id="dials">
-            <div class="dial" id="dial1"></div>
-            <div class="dial" id="dial2"></div>
-            <div class="dial" id="dial3"></div>
-            <div class="dial" id="dial4"></div>
+    <div id="gameContainer" class="rusty-metal-background">
+        <div id="scoreDisplay" class="score-display">700</div>
+        <div id="dialsContainer">
+            <div class="dial" id="dial1">
+                <button class="arrow clockwise">+</button>
+                <button class="arrow counterclockwise">-</button>
+            </div>
+            <div class="dial" id="dial2">
+                <button class="arrow clockwise">+</button>
+                <button class="arrow counterclockwise">-</button>
+            </div>
+            <div class="dial" id="dial3">
+                <button class="arrow clockwise">+</button>
+                <button class="arrow counterclockwise">-</button>
+            </div>
+            <div class="dial" id="dial4">
+                <button class="arrow clockwise">+</button>
+                <button class="arrow counterclockwise">-</button>
+            </div>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script src="script.js"></script> <
 </body>
 </html>
