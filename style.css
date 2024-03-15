@@ -12,8 +12,9 @@ body, h1, h2, h3, p, div {
     align-items: center;
     justify-content: center;
     height: 100vh; /* Make it take the full viewport height */
-    background: url('rusty-metal.jpg') no-repeat center center; /* Placeholder for your rusted metal background image */
+    background: url('https://i.imgur.com/ZFyWtmL.png') no-repeat center center;
     background-size: cover;
+    position: relative;
 }
 
 /* Score display styling */
@@ -65,4 +66,14 @@ body, h1, h2, h3, p, div {
 .counterclockwise {
     bottom: 10px;
     transform: rotate(-135deg); /* Tilted to represent counter-clockwise */
+}
+
+.rust-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
 }
