@@ -11,25 +11,33 @@ body, h1, h2, h3, p, div {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh; /* Make it take the full viewport height */
+    width: 500px;
+    height: auto;
+    margin: auto;
+    overflow: hidden;
     background: url('https://i.imgur.com/ZFyWtmL.png') no-repeat center center;
     background-size: cover;
     position: relative;
 }
 
-/* Score display styling */
-#scoreDisplay {
-    font-size: 3em;
-    color: #ff0000; /* Starting color: Red */
+#scoreContainer {
+    text-align: center;
     margin-bottom: 20px;
-    font-family: 'Digital', sans-serif; /* Placeholder: Use a digital-looking font */
 }
 
+.score-display {
+    font-size: 48px;
+    color: #ff0000; /* Initial red color */
+    text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000, 0 0 40px #ff0000; /* Glowing effect */
+    font-family: 'Digital', sans-serif; /* Ensure you have this font or a similar one */
+}
 /* Dials container */
 #dialsContainer {
     display: flex;
-    justify-content: space-around;
-    width: 60%;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
 }
 
 /* Individual dials */
@@ -37,6 +45,7 @@ body, h1, h2, h3, p, div {
     position: relative;
     width: 100px; /* Dial size */
     height: 100px;
+    margin: 10px;
     border: 3px solid #00ff00; /* Futuristic green border */
     border-radius: 50%; /* Make it circular */
     display: flex;
@@ -51,6 +60,7 @@ body, h1, h2, h3, p, div {
     width: 30px;
     height: 30px;
     border: none;
+    margin: 0 5px;
     background-color: #00ff00; /* Futuristic green */
     color: black;
     font-weight: bold;
@@ -59,21 +69,19 @@ body, h1, h2, h3, p, div {
 
 /* Position the arrows */
 .clockwise {
-    top: 10px;
-    transform: rotate(45deg); /* Tilted to represent clockwise */
+    transform: none; /* Tilted to represent clockwise */
 }
 
 .counterclockwise {
-    bottom: 10px;
-    transform: rotate(-135deg); /* Tilted to represent counter-clockwise */
+    transform: none; /* Tilted to represent counter-clockwise */
 }
 
 .rust-layer {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
+    width: 100%;
+    height: 100%;
     background-size: cover;
     background-position: center;
 }
