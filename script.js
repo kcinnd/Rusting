@@ -11,18 +11,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Update the score display with the current score and change its color
-    function updateScoreDisplay() {
+   function updateScoreDisplay() {
         scoreDisplay.textContent = score;
-        const color = score >= 838 ? 'green' : 'red'; // Change to a more nuanced color transition if needed
-        scoreDisplay.style.color = color;
+    
+        // Calculate how close the score is to 838, where 0 is 700 and 1 is 838
+        const progress = (score - 700) / (838 - 700);
+        const cappedProgress = Math.min(Math.max(progress, 0), 1); // Ensure progress is between 0 and 1
+    
+        // Interpolate between red and green based on progress
+        const red = Math.floor(255 * (1 - cappedProgress));
+        const green = Math.floor(255 * cappedProgress);
+        scoreDisplay.style.color = `rgb(${red}, ${green}, 0)`;
     }
 
     // Show or hide rust layers based on the current score
     function updateRustLayers() {
-        const progress = Math.min(Math.max((score - 700) / (838 - 700), 0), 1);
-        const indexToShow = Math.floor((1 - progress) * rustLayers.length);
+        const progress = (score - 700) / (838 - 700);
+        const cappedProgress = Math.min(Math.max(progress, 0), 1); // Ensure progress is between 0 and 1
+    
         rustLayers.forEach((layer, index) => {
-            layer.style.display = index < indexToShow ? 'block' : 'none';
+            const layerProgress = (cappedProgress * rustLayers.length) - index;
+            const opacity = 1 - Math.min(Math.max(layerProgress, 0), 1);
+            layer.style.opacity = opacity.toString();
         });
     }
 
